@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style type="text/css">
+		.time {
+			font-size: 20px;
+			color: red;
+			font-family: bold;
+		}
+		</style>
+	</head>
+	
+
+	  <script type = "text/javascript">
+			  function startTime() {
+		var tm = new Date();
+		var h = tm.getHours();
+		var m = tm.getMinutes();
+		var s = tm.getSeconds();
+		h = checkTime(h);
+		m = checkTime(m);
+		s = checkTime(s);
+		document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+		t = setTimeout('startTime()',500);
+		}
+		function checkTime(i) {
+		if (i < 0) {
+		i = "0" + i;
+		}
+		return i;
+		}
+	  </script>
+ <body onload="startTime()"> <p id = "txt" class="time"> </p> </body>
+</html>
